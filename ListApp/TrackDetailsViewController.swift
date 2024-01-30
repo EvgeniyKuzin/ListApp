@@ -10,27 +10,17 @@ import UIKit
 class TrackDetailsViewController: UIViewController {
 
     @IBOutlet var artCoverImageView: UIImageView!
-    
-    
     @IBOutlet var trackLabel: UILabel!
-    
     @IBOutlet var albumLabel: UILabel!
+    @IBOutlet var liricsLabel: UILabel!
+    
+    var track: Track!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        artCoverImageView.image = UIImage(named: track.album)
+        trackLabel.text = "Nirvana - \(track.track)"
+        albumLabel.text = "track from album \(track.album)"
+        liricsLabel.text = track.lirics
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
